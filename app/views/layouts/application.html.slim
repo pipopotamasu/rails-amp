@@ -18,7 +18,8 @@
         - else
           = File.read "#{Rails.root}/public#{stylesheet_path("amp/amp_#{controller}", host: nil)}"
       script[async src="https://cdn.ampproject.org/v0.js"]
-      = yield
+      body
+        = yield
 - else
   | <!doctype html>
   html
