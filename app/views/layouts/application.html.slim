@@ -1,4 +1,4 @@
-- if request.format ==  :amp
+- if request.format == :amp
   | <!doctype html>
   html amp=""
     head
@@ -29,10 +29,6 @@
       = csrf_meta_tags
       = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
       = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-      - if amp_ready?
-        - amp_uri = URI.parse(request.url)
-        - amp_uri.path = "#{amp_uri.path}.amp"
-        - amp_uri.query = h(amp_uri.query) if amp_uri.query.present?
-        link rel="amphtml" href = amp_uri.to_s.html_safe
+      
     body
       = yield
