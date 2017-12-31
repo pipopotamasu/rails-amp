@@ -2,4 +2,5 @@
 
 # Add new mime types for use in respond_to blocks:
 # Mime::Type.register "text/richtext", :rtf
+# NOTE: Set up custom mimetype for amp
 Mime::Type.register_alias "text/html", :amp
